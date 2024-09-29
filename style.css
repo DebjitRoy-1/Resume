@@ -1,0 +1,1625 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #f7f7f7;
+    --second-bg-color: #d6d4d4;
+    --text-color: #000;
+    --main-color: #e4a534;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; /* Background color for contrast */
+    overflow: hidden;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+/* Header */
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 9%;
+    height: 6.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
+}
+
+.logo {
+    font-size: 4rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 5px 15px var(--main-color);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-left: 4rem;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    display: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 70%;
+        padding: 1rem 2%;
+        background: white;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-top-left-radius: 2rem;
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-flow: column;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        width: 100%;
+        border-radius: 0.6rem;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.6rem;
+        color: var(--text-color);
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+        padding: 1rem;
+        color: var(--text-color);
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+}
+
+/* Home Section */
+section {
+    min-height: 70vh;
+    padding: 2rem 9%;
+}
+
+.heading {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    text-align: center;
+}
+
+.header span {
+    color: var(--main-color);
+}
+
+.home {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.home #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 1rem;
+    z-index: 1;
+}
+
+.social-icon a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    font-size: 2rem;
+    border: 0.2rem solid var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: var(--main-color);
+    border-radius: 4rem;
+}
+
+.social-icon a:hover {
+    color: white;
+    transform: scale(1.5) translateY(-5px);
+    background-color: var(--main-color);
+    filter: drop-shadow(0 0 15px var(--main-color));
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--main-color);
+    font-size: 1.6rem;
+    border-radius: 4rem;
+    color: white;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn span {
+    color: white;
+}
+
+.btn:hover span {
+    color: var(--main-color);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: var(--bg-color);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    filter: drop-shadow(0 0 15px var(--main-color));
+}
+
+.home .content h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--text-color); /* color will be main color */
+}
+
+.home .content h3 {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.home .content h3 span {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.home .image {
+    flex: 1 1 40rem;
+    z-index: 1;
+}
+
+.home .image img {
+    width: 25vw; 
+    height: auto; 
+    margin-left: 6rem;
+    border-radius: 50%; /* Ensures the image is circular */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.home .image img:hover {
+    box-shadow: 0 5px 15px var(--main-color);
+}
+
+.home .content h3 .typing-text {
+    position: relative;
+}
+
+.home .content h3 .typing-text::before {
+    content: 'Programmer';
+    animation: words 20s infinite;
+}
+
+.home .content h3 .typing-text::after {
+    content: '';
+    position: absolute;
+    background-color: whitesmoke;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid #f1f1f1;
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Developer";
+    }
+    41%, 60% {
+        content: "Web Designer";
+    }
+    61%, 80% {
+        content: "Java Programmer";
+    }
+    81%, 100% {
+        content: "Script Writer";
+    }
+}
+
+@keyframes typing {
+    10%, 15%,
+    30%, 35%,
+    50%, 55%,
+    70%, 75%,
+    90%, 95% {
+        width: 0;
+    }
+    5%, 20%,
+    25%, 40%,
+    65%, 60%,
+    85%, 80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
+
+                        /* About Section */
+                        .about {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            gap: 1rem;
+                        }
+
+                        .about .about-img img {
+                            position: relative;
+                            top: 3rem;
+                            width: 18vw;
+                            border-radius: 50%;
+                            box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+                            cursor: pointer;
+                            transition: 0.4s ease;
+                        }
+
+                        .about-img img:hover {
+                            box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+                        }
+
+                        .about-content h2 {
+                            font-size: 3rem;
+                            font-weight: 600;
+                            margin-top: 3rem;
+                            text-align: center;
+                            color: var(--main-color);
+                        }
+
+                        .about-content p {
+                            font-size: 1.8rem;
+                            max-width: 1000px;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                        }
+
+                        .about-content .btn {
+                            display: block; /* Ensures the button behaves as a block-level element for centering */
+                            margin: 2rem auto; /* Center the button horizontally and add top margin */
+                            text-align: center; /* Center text inside button */
+                        }
+
+                        /* Media Queries for Various Devices */
+                        @media (max-width: 1200px) {
+                            .header {
+                                padding: 2rem 5%;
+                                height: 5rem;
+                            }
+
+                            .logo {
+                                font-size: 3.5rem;
+                            }
+
+                            .navbar ul li a {
+                                font-size: 1.6rem;
+                                margin-left: 3rem;
+                            }
+                        }
+
+                        @media (max-width: 992px) {
+                            .home .content h1 {
+                                font-size: 4rem;
+                            }
+
+                            .home .content h3 {
+                                font-size: 2.5rem;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .home .content h1 {
+                                font-size: 3.5rem;
+                            }
+
+                            .home .content h3 {
+                                font-size: 2rem;
+                            }
+
+                            .home .image img {
+                                width: 30vw;
+                                margin-left: 0;
+                            }
+                        }
+
+                        @media (max-width: 576px) {
+                            .header {
+                                padding: 1rem 3%;
+                                height: 4.5rem;
+                            }
+
+                            .logo {
+                                font-size: 2.5rem;
+                            }
+
+                            .navbar ul li a {
+                                font-size: 1.4rem;
+                                margin-left: 2rem;
+                            }
+
+                            .home .content h1 {
+                                font-size: 3rem;
+                            }
+
+                            .home .content h3 {
+                                font-size: 1.8rem;
+                            }
+
+                            .home .image img {
+                                width: 35vw;
+                            }
+
+                            .about-content h2 {
+                                font-size: 2.5rem;
+                            }
+
+                            .about-content p {
+                                font-size: 1.6rem;
+                                max-width: 90%;
+                            }
+
+                            .about-img img {
+                                width: 60vw;
+                            }
+                        }
+
+                        @media (max-width: 360px) {
+                            .header {
+                                padding: 0.5rem 2%;
+                                height: 4rem;
+                            }
+
+                            .logo {
+                                font-size: 2rem;
+                            }
+
+                            .navbar ul li a {
+                                font-size: 1.2rem;
+                                margin-left: 1rem;
+                            }
+
+                            .home .content h1 {
+                                font-size: 2.5rem;
+                            }
+
+                            .home .content h3 {
+                                font-size: 1.5rem;
+                            }
+
+                            .home .image img {
+                                width: 40vw;
+                            }
+
+                            .about-content h2 {
+                                font-size: 2rem;
+                            }
+
+                            .about-content p {
+                                font-size: 1.4rem;
+                                max-width: 85%;
+                            }
+
+                            .about-img img {
+                                width: 70vw;
+                            }
+                        }
+                                                /*Skills Section*/
+                                                .skills {
+                                                    background: #ffffff; /* Clean white background */
+                                                    padding: 2rem 0; /* Top and bottom padding */
+                                                }
+                                                
+                                                .skills .container {
+                                                    background: #f8f8f8; /* Light grey for subtle contrast */
+                                                    color: var(--text-color);
+                                                    border-radius: 2rem; /* Rounded corners */
+                                                    padding: 3rem; /* Spacious padding */
+                                                    width: 80%;
+                                                    margin: auto;
+                                                    margin-top: 2rem;
+                                                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+                                                    position: relative; /* For layering */
+                                                    overflow: hidden; /* Contain inner elements */
+                                                }
+                                                
+                                                .skills .container::before {
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: -30px;
+                                                    left: -30px;
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    background: rgba(255, 205, 0, 0.1); /* Light yellow overlay */
+                                                    border-radius: 50%; /* Circle shape */
+                                                    z-index: 0; /* Behind content */
+                                                }
+                                                
+                                                .skills .container::after {
+                                                    content: '';
+                                                    position: absolute;
+                                                    bottom: -30px;
+                                                    right: -30px;
+                                                    width: 120px;
+                                                    height: 120px;
+                                                    background: rgba(0, 123, 255, 0.1); /* Light blue overlay */
+                                                    border-radius: 50%; /* Circle shape */
+                                                    z-index: 0; /* Behind content */
+                                                }
+                                                
+                                                .skills .container .row {
+                                                    display: grid; /* Grid for layout */
+                                                    grid-template-columns: repeat(4, 1fr); /* Four columns */
+                                                    flex-wrap: wrap; /* Allow items to wrap */
+                                                    gap: 1.5rem; /* Space between items */
+                                                    z-index: 1; /* Above the background shapes */
+                                                    position: relative; /* For layering */
+                                                }
+                                                
+                                                .skills .bar {
+                                                    padding: 20px; /* Increased padding for more space */
+                                                    border-radius: 1.5rem; /* Rounded corners */
+                                                    background: linear-gradient(135deg, var(--main-color), #fffae5); /* Colorful gradient */
+                                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+                                                    position: relative; /* For shadow effect */
+                                                    overflow: hidden; /* Contain pseudo-elements */
+                                                    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+                                                }
+                                                
+                                                .skills .bar:hover {
+                                                    transform: translateY(-5px); /* Lift effect on hover */
+                                                    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+                                                }
+                                                
+                                                .skills .info {
+                                                    display: flex;
+                                                    flex-direction: column; /* Stack icon and text vertically */
+                                                    align-items: center; /* Center items horizontally */
+                                                    background: #ffffff; /* White background for skill boxes */
+                                                    border-radius: 1.5rem; /* Rounded corners */
+                                                    padding: 1.5rem; /* Increased padding */
+                                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                                                    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+                                                    width: 120px; /* Fixed width */
+                                                    position: relative; /* For layering effects */
+                                                }
+                                                
+                                                .skills .info:hover {
+                                                    transform: scale(1.1); /* Enlarge on hover */
+                                                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+                                                }
+                                                
+                                                .skills img {
+                                                    width: 70px; /* Icon size */
+                                                    height: auto; /* Maintain aspect ratio */
+                                                    margin-bottom: 0.5rem; /* Space between icon and text */
+                                                    transition: transform 0.3s, filter 0.3s; /* Smooth transition */
+                                                }
+                                                
+                                                .skills img:hover {
+                                                    transform: rotate(10deg) scale(1.1); /* Slight rotation and enlargement */
+                                                    filter: brightness(1.2); /* Brighten on hover */
+                                                }
+                                                
+                                                .skills .info span {
+                                                    color: var(--main-color); /* Text color */
+                                                    font-size: 1.5rem;
+                                                    font-weight: bold; /* Bolder text for emphasis */
+                                                }
+                                                
+                                                /* Decorative Pulsing Effect */
+                                                .skills .info::before {
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    left: 50%;
+                                                    width: 120%;
+                                                    height: 120%;
+                                                    background: rgba(0, 123, 255, 0.15); /* Light blue pulsing effect */
+                                                    border-radius: 50%; /* Circular */
+                                                    transform: translate(-50%, -50%) scale(1); /* Center the effect */
+                                                    transition: transform 0.5s; /* Smooth pulsing */
+                                                    z-index: -1; /* Behind content */
+                                                }
+                                                
+                                                .skills .info:hover::before {
+                                                    transform: translate(-50%, -50%) scale(1.5); /* Pulsing effect on hover */
+                                                }
+                                                
+                                                /* Responsive adjustments */
+                                                @media screen and (max-width: 1024px) {
+                                                    .skills .container .row {
+                                                        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+                                                    }
+                                                }
+                                                
+                                                @media screen and (max-width: 600px) {
+                                                    .skills .container .row {
+                                                        grid-template-columns: 1fr; /* One column for small screens */
+                                                    }
+                                                
+                                                    .skills .info {
+                                                        width: 80%; /* Full width for mobile */
+                                                    }
+                                                
+                                                    .skills img {
+                                                        width: 50px; /* Smaller size for mobile */
+                                                        margin: 0.3rem; /* Adjust margin for mobile */
+                                                    }
+                                                }
+/* Education */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    animation: gradientBackground 10s ease infinite; /* Background animation */
+}
+
+@keyframes gradientBackground {
+    0% { background-color: #f0f8ff; }
+    50% { background-color: #e0f7fa; }
+    100% { background-color: #f0f8ff; }
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    border-radius: 0 0 30px 30px;
+    animation: fadeIn 1s ease-in-out; /* Fade in animation */
+    transition: transform 0.3s ease; /* Scale effect on hover */
+}
+
+header:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-align: center;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.skills, .education {
+    background: #ffffff;
+    padding: 2rem 0;
+}
+.skills, .education {
+    background: #f8f8f8; /* Light grey for subtle contrast */
+    color: var(--text-color);
+    border-radius: 2rem; /* Rounded corners */
+    padding: 3rem; /* Spacious padding */
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    position: relative; /* For layering */
+    overflow: hidden; /* Contain inner elements */
+}
+
+.skills .education, .education .education {
+    background: #f8f8f8;
+    color: var(--text-color);
+    border-radius: 2rem;
+    padding: 3rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-in-out; /* Slide in animation */
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.education .education {
+    margin-top: 3rem;
+}
+
+.education h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: bounceIn 0.6s; /* Bounce animation for headings */
+    transition: text-shadow 0.3s ease; /* Text shadow effect on hover */
+}
+
+@keyframes bounceIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    60% { transform: translateY(10px); opacity: 1; }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, var(--main-color), #fffae5); /* Soft gradient */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
+    width: 220px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    text-align: center;
+    padding: 20px; /* Consistent padding */
+    position: relative;
+    overflow: hidden;
+    animation: cardEntry 0.5s ease-in-out;
+    perspective: 1000px; /* For 3D flip effect */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift effect on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Layered shadow effect */
+.card {
+    background: linear-gradient(135deg, var(--main-color), #fffae5);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: cardEntry 0.5s ease-in-out;
+    perspective: 1000px;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 123, 0, 0.8);
+}
+
+/* Layered shadow effect */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.card-front {
+    background: transparent;
+}
+
+.card-back {
+    background: #fffae5;
+    transform: rotateY(180deg);
+}
+
+/* Subtle text shadow */
+.card h3 {
+    font-size: 1.6em;
+    color: #333;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card p {
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Text animation */
+.card h3, .card p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover h3, .card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* New animations for entering the viewport */
+@keyframes cardEntry {
+    from {
+        transform: scale(0.5) rotateY(30deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotateY(0);
+        opacity: 1;
+    }
+}
+
+/* Shake effect on hover */
+.card:hover {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Rotate text for a playful effect */
+.card:hover h3 {
+    animation: rotateText 0.3s ease;
+}
+
+@keyframes rotateText {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Pulsing icon effect */
+.card-icon {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.2);
+}
+
+/* Adding a glowing border effect */
+.card:hover {
+    border: 2px solid rgba(255, 123, 0, 0.8);
+}
+
+/* Background wave effect */
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('wave-pattern.svg');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover:before {
+    opacity: 0.3;
+}
+
+/* Enhanced particle effect on hover */
+.card:hover {
+    animation: particleEffect 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes particleEffect {
+    0% {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+/* New animations for entering the viewport */
+@keyframes cardEntry {
+    from {
+        transform: scale(0.5) rotateY(30deg); /* Initial scale and rotation */
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotateY(0); /* Final scale and rotation */
+        opacity: 1;
+    }
+}
+
+/* Shake effect on hover */
+
+
+
+
+/* Rotate text for a playful effect */
+.card:hover h3 {
+    animation: rotateText 0.3s ease; /* Rotate animation */
+}
+
+@keyframes rotateText {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Pulsing icon effect */
+.card-icon {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1); /* Slight scale effect for icons */
+}
+
+/* Adding a glowing border effect */
+.card:hover {
+    border: 2px solid rgba(255, 123, 0, 0.5); /* Glow effect */
+}
+
+/* Background wave effect (optional) */
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('wave-pattern.svg'); /* Add a wave pattern SVG */
+    background-size: cover;
+    opacity: 0.1; /* Subtle effect */
+    z-index: -1; /* Behind everything else */
+    transition: opacity 0.3s ease;
+}
+
+.card:hover:before {
+    opacity: 0.3; /* More visible on hover */
+}
+@media screen and (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        width: 180px; /* Adjust card width for smaller screens */
+        padding: 40px 30px; /* Adjust padding */
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button Styles */
+button {
+    background: #4facfe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #00f2fe;
+}
+
+/* Card Overlay Effect */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.3);
+    border-radius: 15px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+.card:hover::after {
+    transform: translateY(0);
+}
+
+/* Glowing Effect for Cards */
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Scale Effect on Card Text */
+.card h3, .card p {
+    transition: transform 0.3s ease;
+}
+
+.card:hover h3, .card:hover p {
+    transform: translateY(-5px);
+}
+
+/* Additional Button Styles */
+button.primary {
+    background: #28a745;
+    transition: background 0.3s ease;
+}
+
+button.primary:hover {
+    background: #218838;
+}
+
+/* Notification Toast Styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 123, 255, 0.9);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease, fadeOut 0.5s ease 2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 95%; /* Slightly wider on smaller screens */
+        padding: 15px; /* Reduced padding */
+    }
+    
+    .card h3 {
+        font-size: 1.4em; /* Smaller heading on mobile */
+    }
+    
+    .card p {
+        font-size: 0.9em; /* Smaller text for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width on very small screens */
+        height: auto; /* Maintain auto height */
+    }
+    
+    .card h3 {
+        font-size: 1.2em; /* Further reduce heading size */
+    }
+    
+    .card p {
+        font-size: 0.8em; /* Further reduce paragraph size */
+    }
+}
+
+                            /* contact Section */
+                            .contact {
+                                background: linear-gradient(135deg, var(--bg-color), var(--accent-color));
+                                padding: 8rem 0;
+                                position: relative;
+                                overflow: hidden;
+                                margin-top: 4rem;
+                                border-radius: 2rem;
+                                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+                                animation: gradientShift 10s infinite alternate;
+                            }
+
+                            @keyframes gradientShift {
+                                0% {
+                                    background-position: 0% 0%;
+                                }
+                                100% {
+                                    background-position: 100% 100%;
+                                }
+                            }
+
+                            .contact h2 {
+                                margin-bottom: 2rem;
+                                color: var(--text-color);
+                                font-family: 'Courier New', monospace;
+                                text-align: center;
+                                position: relative;
+                                z-index: 1;
+                                font-size: 2.8rem;
+                                letter-spacing: 2px;
+                                animation: fadeInUp 0.6s ease;
+                                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                            }
+
+                            @keyframes fadeInUp {
+                                0% {
+                                    opacity: 0;
+                                    transform: translateY(30px);
+                                }
+                                100% {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            .contact form {
+                                max-width: 80rem;
+                                margin: 2rem auto;
+                                padding: 4rem;
+                                background: rgba(255, 255, 255, 0.95);
+                                border-radius: 2rem;
+                                position: relative;
+                                z-index: 1;
+                                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            }
+
+                            .contact form:hover {
+                                transform: translateY(-5px);
+                                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+                            }
+
+                            .contact form .input-box {
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                position: relative;
+                                margin-bottom: 2rem;
+                            }
+
+                            .contact form .input-box input,
+                            .contact form textarea {
+                                width: calc(100% - 2rem);
+                                padding: 1.5rem;
+                                font-size: 1.6rem;
+                                color: var(--text-color);
+                                background: var(--bg-color);
+                                border-radius: 1rem;
+                                border: 3px solid var(--main-color);
+                                margin: 1rem;
+                                transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+                                position: relative;
+                                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .contact form .input-box input:focus,
+                            .contact form textarea:focus {
+                                border-color: var(--hover-color);
+                                box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+                                transform: scale(1.02);
+                                background: rgba(255, 255, 255, 0.8);
+                                animation: glow 0.5s ease forwards;
+                            }
+
+                            @keyframes glow {
+                                0% {
+                                    box-shadow: 0 0 5px rgba(0, 180, 255, 0);
+                                }
+                                100% {
+                                    box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+                                }
+                            }
+
+                            .contact form .btn {
+                                margin-top: 2rem;
+                                padding: 1rem 2rem;
+                                font-size: 1.8rem;
+                                background: linear-gradient(45deg, var(--main-color), var(--hover-color));
+                                color: rgba(187, 158, 53, 0.697);
+                                border: none;
+                                border-radius: 1rem;
+                                cursor: pointer;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.3s ease;
+                                z-index: 1;
+                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                            }
+
+                            .contact form .btn:hover {
+                                background: linear-gradient(45deg, var(--hover-color), var(--main-color));
+                                transform: translateY(-3px) rotate(2deg);
+                                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                            }
+
+                            .contact form .btn:active {
+                                transform: translateY(2px) scale(0.95);
+                            }
+
+                            .contact form .input-box label {
+                                font-size: 1.4rem;
+                                color: var(--text-color);
+                                position: absolute;
+                                top: 1.5rem;
+                                left: 1.5rem;
+                                transition: 0.2s ease all;
+                                pointer-events: none;
+                            }
+
+                            .contact form .input-box input:focus + label,
+                            .contact form .input-box input:not(:placeholder-shown) + label,
+                            .contact form textarea:focus + label,
+                            .contact form textarea:not(:placeholder-shown) + label {
+                                top: -1rem;
+                                left: 1rem;
+                                font-size: 1.2rem;
+                                color: var(--main-color);
+                            }
+
+                            .contact .footer {
+                                text-align: center;
+                                margin-top: 3rem;
+                                color: var(--text-color);
+                                font-size: 1.4rem;
+                            }
+
+                            .contact .footer a {
+                                color: var(--main-color);
+                                text-decoration: none;
+                                transition: color 0.3s ease, transform 0.2s ease;
+                            }
+
+                            .contact .footer a:hover {
+                                color: var(--hover-color);
+                                transform: scale(1.1);
+                            }
+
+                            /* Animated shapes */
+                            .contact::before,
+                            .contact::after {
+                                content: '';
+                                position: absolute;
+                                border-radius: 50%;
+                                background: rgba(255, 255, 255, 0.05);
+                                z-index: 0;
+                                animation: floating 6s ease-in-out infinite;
+                            }
+
+                            .contact::before {
+                                width: 250px;
+                                height: 250px;
+                                top: -50px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                animation-delay: 0s; 
+                            }
+
+                            .contact::after {
+                                width: 350px;
+                                height: 350px;
+                                bottom: -50px;
+                                left: 25%;
+                                animation-delay: 2s; 
+                            }
+
+                            @keyframes floating {
+                                0% {
+                                    transform: translate(-50%, -20%);
+                                }
+                                50% {
+                                    transform: translate(-50%, 20%);
+                                }
+                                100% {
+                                    transform: translate(-50%, -20%);
+                                }
+                            }
+
+                            /* Media Queries for Responsiveness */
+                            @media (max-width: 1200px) {
+                                .contact h2 {
+                                    font-size: 2.5rem;
+                                }
+
+                                .contact form {
+                                    padding: 3rem;
+                                }
+
+                                .contact form .btn {
+                                    font-size: 1.6rem;
+                                }
+                            }
+
+                            @media (max-width: 992px) {
+                                .contact h2 {
+                                    font-size: 2.2rem;
+                                }
+
+                                .contact form .input-box input,
+                                .contact form textarea {
+                                    font-size: 1.4rem;
+                                }
+
+                                .contact form {
+                                    padding: 2.5rem;
+                                }
+                            }
+
+                            @media (max-width: 768px) {
+                                .contact h2 {
+                                    font-size: 2rem;
+                                    margin-bottom: 1.5rem;
+                                }
+
+                                .contact form {
+                                    padding: 2rem;
+                                }
+
+                                .contact form .input-box {
+                                    flex-direction: column;
+                                }
+
+                                .contact form .input-box input,
+                                .contact form textarea {
+                                    width: 100%;
+                                    margin: 0.5rem 0;
+                                }
+
+                                .contact form .btn {
+                                    width: 100%;
+                                    padding: 1rem;
+                                    font-size: 1.5rem;
+                                }
+                            }
+
+                            @media (max-width: 576px) {
+                                .contact h2 {
+                                    font-size: 1.8rem;
+                                }
+
+                                .contact form {
+                                    padding: 1.5rem;
+                                }
+
+                                .contact form .btn {
+                                    font-size: 1.4rem;
+                                }
+
+                                .contact .footer {
+                                    font-size: 1.2rem;
+                                }
+
+                                                        }
+                                                        /*Footer*/
+                                                        .footer {
+                                                            position: relative;
+                                                            bottom: 0;
+                                                            width: 100%;
+                                                            padding: 40px 0;
+                                                            background-color: var(--main-color);
+                                                            overflow: hidden;
+                                                            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+                                                        }
+                                                        
+                                                        .footer::before {
+                                                            content: '';
+                                                            position: absolute;
+                                                            top: 0;
+                                                            left: 50%;
+                                                            width: 200%;
+                                                            height: 200%;
+                                                            background: rgba(255, 255, 255, 0.1);
+                                                            border-radius: 50%;
+                                                            transform: translate(-50%, -50%) rotate(15deg);
+                                                            animation: float 8s ease-in-out infinite;
+                                                            z-index: 0;
+                                                        }
+                                                        
+                                                        @keyframes float {
+                                                            0% {
+                                                                transform: translate(-50%, -40%) rotate(15deg);
+                                                            }
+                                                            50% {
+                                                                transform: translate(-50%, -30%) rotate(15deg);
+                                                            }
+                                                            100% {
+                                                                transform: translate(-50%, -40%) rotate(15deg);
+                                                            }
+                                                        }
+                                                        
+                                                        .footer .social {
+                                                            text-align: center;
+                                                            padding-bottom: 25px;
+                                                            color: var(--text-color);
+                                                            z-index: 1;
+                                                        }
+                                                        
+                                                        .footer .social a {
+                                                            font-size: 25px;
+                                                            color: var(--text-color);
+                                                            border: 2px solid rgba(255, 255, 255, 0.7);
+                                                            width: 50px;
+                                                            height: 50px;
+                                                            line-height: 50px;
+                                                            display: inline-block;
+                                                            text-align: center;
+                                                            border-radius: 50%;
+                                                            margin: 0 10px;
+                                                            transition: transform 0.3s ease, background 0.3s ease;
+                                                            position: relative;
+                                                            overflow: hidden;
+                                                        }
+                                                        
+                                                        .footer .social a::before {
+                                                            content: '';
+                                                            position: absolute;
+                                                            top: 50%;
+                                                            left: 50%;
+                                                            width: 300%;
+                                                            height: 300%;
+                                                            background: rgba(255, 255, 255, 0.3);
+                                                            border-radius: 50%;
+                                                            transform: translate(-50%, -50%) scale(0);
+                                                            transition: transform 0.4s ease;
+                                                            z-index: 0; /* Behind the text */
+                                                        }
+                                                        
+                                                        .footer .social a:hover::before {
+                                                            transform: translate(-50%, -50%) scale(1);
+                                                        }
+                                                        
+                                                        .footer .social a:hover {
+                                                            transform: scale(1.1) translateY(-5px);
+                                                            background: rgba(255, 255, 255, 0.2);
+                                                            color: var(--main-color);
+                                                        }
+                                                        
+                                                        .footer ul {
+                                                            margin-top: 0;
+                                                            padding: 0;
+                                                            font-size: 18px;
+                                                            line-height: 1.6;
+                                                            margin-bottom: 0;
+                                                            text-align: center;
+                                                        }
+                                                        
+                                                        .footer ul li {
+                                                            display: inline-block;
+                                                            padding: 0 15px;
+                                                            position: relative;
+                                                        }
+                                                        
+                                                        .footer ul li a {
+                                                            color: rgba(255, 255, 255, 0.8);
+                                                            border-bottom: 3px solid transparent;
+                                                            transition: color 0.3s ease, border-bottom 0.3s ease;
+                                                        }
+                                                        
+                                                        .footer ul li a:hover {
+                                                            border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+                                                            color: rgba(255, 255, 255, 1);
+                                                            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                                                        }
+                                                        
+                                                        .footer .copyright {
+                                                            margin-top: 50px;
+                                                            text-align: center;
+                                                            font-size: 16px;
+                                                            color: rgba(255, 255, 255, 0.8);
+                                                            position: relative;
+                                                            z-index: 1;
+                                                        }
+                                                        
+                                                        /* Adding an animated background shape */
+                                                        .footer .shape {
+                                                            position: absolute;
+                                                            width: 300px;
+                                                            height: 300px;
+                                                            background: rgba(255, 255, 255, 0.05);
+                                                            border-radius: 50%;
+                                                            bottom: -100px;
+                                                            left: 50%;
+                                                            transform: translateX(-50%);
+                                                            animation: wave 10s ease-in-out infinite;
+                                                            z-index: 0; /* Behind the content */
+                                                        }
+                                                        
+                                                        @keyframes wave {
+                                                            0%, 100% {
+                                                                transform: translateX(-50%) translateY(0);
+                                                            }
+                                                            50% {
+                                                                transform: translateX(-50%) translateY(-20px);
+                                                            }
+                                                        }
+                                                        
+                                                        /* Responsive styles for the footer */
+                                                        @media (max-width: 576px) {
+                                                            .footer .social a {
+                                                                font-size: 20px;
+                                                                width: 40px;
+                                                                height: 40px;
+                                                                line-height: 40px;
+                                                            }
+                                                        
+                                                            .footer ul li {
+                                                                padding: 0 10px;
+                                                            }
+                                                        
+                                                            .footer .copyright {
+                                                                font-size: 14px;
+                                                            }
+                                                        }
